@@ -1,0 +1,26 @@
+---
+-  hosts:  web_servers
+   become:  true
+   tasks:
+
+
+   -  name: installing apps
+      tags:   apache2,ubuntu
+      apt:
+        name:
+          - apache2
+          - libapache2-mod-php
+        state:  absent
+      when:  ansible_distribution == "Ubuntu"
+
+-  hosts:  db_servers
+   become:  true
+   tasks:
+
+
+   -  name: installing apps
+      tags:  always
+      apt:
+        upgrade:  dist
+        update_cache: yes
+      when:  ansible_distribution == "Ubuntu"

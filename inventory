@@ -1,0 +1,5 @@
+[web_servers]
+ubuntu@ec2-16-170-141-134.eu-north-1.compute.amazonaws.com
+
+[db_servers]
+ubuntu@ec2-51-20-129-37.eu-north-1.compute.amazonaws.com 
